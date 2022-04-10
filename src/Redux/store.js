@@ -1,8 +1,25 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { userSlice } from "../features/User/UserSlice";
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { loginReducer } from "./reducers/userReducer";
 
-export default configureStore({
-  reducer: {
-    user: userSlice.reducer,
-  },
+const reducer = combineReducers({
+  login: loginReducer,
 });
+
+const userInfoFromStorage = localStorage.getItem("user")
+  ? JSON.parse(localStorage.getItem("user"))
+  : null;
+
+const initialState = {
+  login: { user: userInfoFromStorage },
+};
+
+const middleware = [thunk];
+
+const store = createStore(
+  reducer,
+  initialState,
+  applyMiddleware(...middleware)
+);
+
+export default store;
