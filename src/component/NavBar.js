@@ -4,7 +4,7 @@ import React from "react";
 export const NavBar = () => {
   return (
     <AppBar position="static" className="navbar">
-      Shopsey
+      <h2>Shopsey</h2>
     </AppBar>
   );
 };

@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { NavBar } from "./component/NavBar";
-import { Home } from "./screens/Home";
-import { Login } from "./screens/Login";
-import { Signup } from "./screens/Signup";
+import { NavBar } from "./Component/NavBar";
+import { Home } from "./Screens/Home";
+import { Login } from "./Screens/Login";
+import { Signup } from "./Screens/Signup";
 
 function App() {
   return (
