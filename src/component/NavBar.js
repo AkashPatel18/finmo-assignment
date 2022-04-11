@@ -5,7 +5,8 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../Redux/actions/userActions";
 
 export const NavBar = () => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -25,8 +26,14 @@ export const NavBar = () => {
 
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+
   const handleCartClick = () => {
     navigate("/cart");
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -37,12 +44,23 @@ export const NavBar = () => {
             <h2>Shopsey</h2>
           </div>
         </Link>
-        <div onClick={handleCartClick}>
-          <IconButton aria-label="cart">
-            <StyledBadge badgeContent={cartItems.length} color="secondary">
-              <ShoppingCartIcon />
-            </StyledBadge>
-          </IconButton>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <p onClick={handleLogout} style={{ marginRight: 10 }}>
+            Logout
+          </p>
+          <div onClick={handleCartClick}>
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={cartItems.length} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
+          </div>
         </div>
       </div>
     </AppBar>
