@@ -2,8 +2,12 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { register } from "../Redux/actions/userActions";
 
 export const Signup = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="loginContainer">
       <div>
@@ -28,10 +32,15 @@ export const Signup = () => {
             .required("Required"),
         })}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          setSubmitting(false);
+          dispatch(
+            register(
+              values.firstName,
+              values.lastName,
+              values.email,
+              values.password
+            )
+          );
         }}
       >
         <div className="loginForm">
