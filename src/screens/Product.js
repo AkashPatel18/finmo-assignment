@@ -10,8 +10,6 @@ export const Product = () => {
   const { id, image, title, rating, price, description, category } =
     state.product;
 
-  console.log(state.product);
-
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {

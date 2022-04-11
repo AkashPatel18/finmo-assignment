@@ -17,7 +17,6 @@ export const Home = () => {
   }, []);
 
   const handleProductClick = (product) => {
-    console.log(product);
     navigate(`product/${product.id}`, { state: { product: product } });
   };
 

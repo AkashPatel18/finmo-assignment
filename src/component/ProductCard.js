@@ -12,7 +12,6 @@ import StarIcon from "@mui/icons-material/Star";
 import { ReadMore } from "./ReadMore";
 
 export const ProductCard = ({ productInfo }) => {
-  //   console.log(productInfo);
   return (
     <Card sx={{ height: 450, width: 300 }} className={"product"}>
       <CardMedia
