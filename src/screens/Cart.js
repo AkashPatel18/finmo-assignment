@@ -1,7 +1,11 @@
 import { Button, Container } from "@mui/material";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeProduct } from "./../Redux/actions/productActions";
+import {
+  increamentProduct,
+  removeProduct,
+  decreamentProduct,
+} from "./../Redux/actions/productActions";
 
 export const Cart = () => {
   const { cartItems } = useSelector((state) => state.products);
@@ -33,6 +37,14 @@ export const Cart = () => {
     dispatch(removeProduct(product));
   };
 
+  const incItem = (product) => {
+    dispatch(increamentProduct(product));
+  };
+
+  const decItem = (product) => {
+    dispatch(decreamentProduct(product));
+  };
+
   return (
     <Container fixed style={{ marginTop: 80 }}>
       <div>
@@ -48,7 +60,37 @@ export const Cart = () => {
               <tr key={key}>
                 <td>{item.title.slice(0, 16)}</td>
                 <td>{item.price}</td>
-                <td>{item.count}</td>
+
+                <td>
+                  <span
+                    onClick={() => incItem(item)}
+                    style={{
+                      background: "#d9d9d9",
+                      borderRadius: 3,
+                      margin: 10,
+                      fontSize: 20,
+                      cursor: "pointer",
+                    }}
+                  >
+                    {" "}
+                    +{""}
+                  </span>
+                  {item.count}
+                  <span
+                    onClick={() => decItem(item)}
+                    style={{
+                      background: "#d9d9d9",
+                      borderRadius: 3,
+                      margin: 10,
+                      fontSize: 20,
+                      cursor: "pointer",
+                    }}
+                  >
+                    {" "}
+                    -{" "}
+                  </span>
+                </td>
+
                 <td
                   style={{ cursor: "pointer" }}
                   onClick={() => handleRemove(item)}

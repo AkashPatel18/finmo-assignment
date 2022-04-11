@@ -4,6 +4,22 @@ export const FETCH_PRODUCTS_SUCCESS = "FETCH_PRODUCTS_SUCCESS";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const CALCULATE_TOTAL_PRICE = "CALCULATE_TOTAL_PRICE";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
+export const REMOVE_SINGLE_PRODUCT = "REMOVE_SINGLE_PRODUCT";
+
+const removeProduct = (products, product) => {
+  let isFirstItemFound = false;
+  let updatedProducts = products.filter((p) => {
+    if (p.id == product.id && !isFirstItemFound) {
+      isFirstItemFound = true;
+    } else {
+      return p;
+    }
+  });
+
+  console.warn(updatedProducts);
+
+  return updatedProducts;
+};
 
 export const productReducer = (
   state = { cartItems: [], totalPrice: 0 },
@@ -33,6 +49,12 @@ export const productReducer = (
       return {
         ...state,
         cartItems: state.cartItems.filter((item) => item.id != action.payload),
+      };
+
+    case REMOVE_SINGLE_PRODUCT:
+      return {
+        ...state,
+        cartItems: removeProduct(state.cartItems, action.payload),
       };
     default:
       return state;
