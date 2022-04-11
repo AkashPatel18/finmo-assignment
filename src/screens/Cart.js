@@ -1,13 +1,18 @@
 import { Button, Container } from "@mui/material";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeProduct } from "./../Redux/actions/productActions";
 
 export const Cart = () => {
-  const { cartItems, totalPrice } = useSelector((state) => state.products);
+  const { cartItems } = useSelector((state) => state.products);
 
-  const absoluteProducts = {};
+  let absoluteProducts = {};
+
+  let totalPrice = 0;
 
   for (let item of cartItems) {
+    totalPrice += item.price;
+    console.log(item, "bin");
     if (absoluteProducts[item.id]) {
       absoluteProducts[item.id] = {
         ...item,
@@ -22,8 +27,11 @@ export const Cart = () => {
   }
 
   const items = Object.values(absoluteProducts);
+  const dispatch = useDispatch();
 
-  const handleRemove = () => {};
+  const handleRemove = (product) => {
+    dispatch(removeProduct(product));
+  };
 
   return (
     <Container fixed style={{ marginTop: 80 }}>
@@ -41,7 +49,12 @@ export const Cart = () => {
                 <td>{item.title.slice(0, 16)}</td>
                 <td>{item.price}</td>
                 <td>{item.count}</td>
-                <td onClick={handleRemove}>remove</td>
+                <td
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handleRemove(item)}
+                >
+                  remove
+                </td>
               </tr>
             );
           })}
