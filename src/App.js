@@ -5,6 +5,7 @@ import { Home } from "./Screens/Home";
 import { Login } from "./Screens/Login";
 import { Signup } from "./Screens/Signup";
 import { Product } from "./Screens/Product";
+import { Cart } from "./Screens/Cart";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function App() {
           <>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
           </>
         ) : (
           <>

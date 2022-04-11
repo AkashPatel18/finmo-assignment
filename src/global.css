@@ -49,6 +49,10 @@ code {
 
 .navbar {
   padding: 0px 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .form {
