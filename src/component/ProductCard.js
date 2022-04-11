@@ -5,6 +5,7 @@ import {
   Typography,
   CardActions,
   Button,
+  Rating,
 } from "@mui/material";
 import React from "react";
 import StarIcon from "@mui/icons-material/Star";
@@ -25,23 +26,12 @@ export const ProductCard = ({ productInfo }) => {
         <Typography gutterBottom variant="h6" component="div">
           <ReadMore text={productInfo.title} maxLength={15} />
         </Typography>
-        <div
-          style={{
-            backgroundColor: "green",
-            width: 40,
-            borderRadius: 3,
-            display: "flex",
-            justifyContent: "center",
-            color: "white",
-            padding: "3px 7px",
-            alignItems: "center",
-            fontSize: 13,
-          }}
-        >
-          <div>
-            {productInfo.rating.rate} <StarIcon fontSize="13" />
-          </div>
-        </div>
+        <Rating
+          name="half-rating-read"
+          defaultValue={productInfo.rating.rate}
+          precision={0.5}
+          readOnly
+        />
         <p>₹{productInfo.price}</p>
         <ReadMore text={productInfo.description} maxLength={80} />
       </CardContent>
