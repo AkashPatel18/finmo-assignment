@@ -10,8 +10,6 @@ export const Login = () => {
 
   const { error } = useSelector((state) => state).login;
 
-  console.log(error);
-
   return (
     <div className="loginContainer">
       {error && alert(error)}

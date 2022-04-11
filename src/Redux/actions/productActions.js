@@ -7,9 +7,13 @@ import {
   REMOVE_SINGLE_PRODUCT,
 } from "../reducers/productReducers";
 import { BASE_URL } from "./../../utils/api";
-import { FETCH_PRODUCTS_SUCCESS } from "./../reducers/productReducers";
+import {
+  FETCH_PRODUCTS_SUCCESS,
+  FETCH_PRODUCTS,
+} from "./../reducers/productReducers";
 
 export const fetchProducts = () => async (dispatch, getState) => {
+  dispatch({ type: FETCH_PRODUCTS });
   try {
     const { data } = await axios.get(`${BASE_URL}/products`);
     dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: data });

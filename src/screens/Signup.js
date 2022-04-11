@@ -70,7 +70,7 @@ export const Signup = () => {
             </ErrorMessage>
 
             <label htmlFor="password">Password</label>
-            <Field name="password" type="text" className={"field"} />
+            <Field name="password" type="password" className={"field"} />
             <ErrorMessage name="password">
               {(msg) => <div className="error">{msg}</div>}
             </ErrorMessage>

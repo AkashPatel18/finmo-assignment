@@ -15,9 +15,6 @@ const removeProduct = (products, product) => {
       return p;
     }
   });
-
-  console.warn(updatedProducts);
-
   return updatedProducts;
 };
 
@@ -29,7 +26,7 @@ export const productReducer = (
     case FETCH_PRODUCTS:
       return { products: [], loading: true, ...state };
     case FETCH_PRODUCTS_SUCCESS:
-      return { products: action.payload, loading: false, ...state };
+      return { ...state, products: action.payload, loading: false };
     case FETCH_PRODUCTS_FAIL:
       return {
         error: "there is some error while fetching products",
@@ -50,7 +47,6 @@ export const productReducer = (
         ...state,
         cartItems: state.cartItems.filter((item) => item.id != action.payload),
       };
-
     case REMOVE_SINGLE_PRODUCT:
       return {
         ...state,

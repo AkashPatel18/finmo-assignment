@@ -41,7 +41,7 @@ export const NavBar = () => {
       <div className="navbar">
         <Link to={"/"} style={linkStyle}>
           <div>
-            <h2>Shopsey</h2>
+            <h2>ShopEasy</h2>
           </div>
         </Link>
         <div
@@ -51,7 +51,10 @@ export const NavBar = () => {
             alignItems: "center",
           }}
         >
-          <p onClick={handleLogout} style={{ marginRight: 10 }}>
+          <p
+            onClick={handleLogout}
+            style={{ marginRight: 20, cursor: "pointer" }}
+          >
             Logout
           </p>
           <div onClick={handleCartClick}>
