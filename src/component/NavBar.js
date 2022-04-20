@@ -37,7 +37,7 @@ export const NavBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ background: "black" }}>
       <div className="navbar">
         <Link to={"/"} style={linkStyle}>
           <div>
@@ -55,7 +55,7 @@ export const NavBar = () => {
             onClick={handleLogout}
             style={{ marginRight: 20, cursor: "pointer" }}
           >
-            Logout
+            LOGOUT
           </p>
           <div onClick={handleCartClick}>
             <IconButton aria-label="cart">

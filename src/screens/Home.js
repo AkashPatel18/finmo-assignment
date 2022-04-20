@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../Redux/actions/productActions";
 import { ProductCard } from "../Component/ProductCard";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Home = () => {
   const dispatch = useDispatch();

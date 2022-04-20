@@ -13,27 +13,29 @@ import { ReadMore } from "./ReadMore";
 
 export const ProductCard = ({ productInfo }) => {
   return (
-    <Card sx={{ height: 450, width: 300 }} className={"product"}>
-      <CardMedia
-        component="img"
-        height="200"
-        width="100"
-        image={productInfo.image}
-        style={{ contain: "size" }}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
-          <ReadMore text={productInfo.title} maxLength={15} />
-        </Typography>
-        <Rating
-          name="half-rating-read"
-          defaultValue={productInfo.rating.rate}
-          precision={0.5}
-          readOnly
+    <div class="single-product">
+      <div class="product-thumb">
+        <img
+          src={productInfo.image}
+          alt=""
+          style={{ height: 100, width: 100 }}
         />
-        <p>₹{productInfo.price}</p>
-        <ReadMore text={productInfo.description} maxLength={80} />
-      </CardContent>
-    </Card>
+      </div>
+      <div class="product-title">
+        <h3 style={{ fontSize: 18 }}>
+          <a href="">{productInfo.title.slice(0, 50)}</a>
+        </h3>
+      </div>
+      <div class="product-btns">
+        <div class="btn-small mr-2">₹ {productInfo.price}</div>
+        {/* <a href="" class="btn-round mr-2">
+          <i class="fa fa-shopping-cart"></i>
+        </a>
+        <a href="" class="btn-round">
+          <i class="fa fa-heart"></i>
+        </a> */}
+      </div>
+      <Rating style={{ alignSelf: "center", marginTop: 10 }} />
+    </div>
   );
 };
