@@ -37,7 +37,10 @@ export const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" style={{ background: "black" }}>
+    <AppBar
+      position="static"
+      style={{ background: "black", padding: "10px 20px" }}
+    >
       <div className="navbar">
         <Link to={"/"} style={linkStyle}>
           <div>
