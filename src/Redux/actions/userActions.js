@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_ERROR, LOGOUT } from "./../reducers/userReducer";
+import { LOGIN, LOGIN_ERROR, LOGOUT } from "../reducers/userReducer";
 
 export const login = (email, password) => async (dispatch) => {
   let storedUserInfo = localStorage.getItem("signedUser");

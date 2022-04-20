@@ -1,8 +1,8 @@
 import { Container, Grid, CircularProgress } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "./../Redux/actions/productActions";
-import { ProductCard } from "./../Component/ProductCard";
+import { fetchProducts } from "../Redux/actions/productActions";
+import { ProductCard } from "../Component/ProductCard";
 import { useNavigate } from "react-router-dom";
 
 export const Home = () => {

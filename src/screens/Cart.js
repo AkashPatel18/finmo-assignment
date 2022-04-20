@@ -5,7 +5,7 @@ import {
   increamentProduct,
   removeProduct,
   decreamentProduct,
-} from "./../Redux/actions/productActions";
+} from "../Redux/actions/productActions";
 
 export const Cart = () => {
   const { cartItems } = useSelector((state) => state.products);

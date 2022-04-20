@@ -6,7 +6,7 @@ import {
   REMOVE_PRODUCT,
   REMOVE_SINGLE_PRODUCT,
 } from "../reducers/productReducers";
-import { BASE_URL } from "./../../utils/api";
+import { BASE_URL } from "../../Utils/api";
 import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS,
