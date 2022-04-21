@@ -62,7 +62,10 @@ export const NavBar = () => {
           </p>
           <div onClick={handleCartClick}>
             <IconButton aria-label="cart">
-              <StyledBadge badgeContent={cartItems.length} color="secondary">
+              <StyledBadge
+                badgeContent={cartItems.length}
+                style={{ color: "white" }}
+              >
                 <ShoppingCartIcon />
               </StyledBadge>
             </IconButton>

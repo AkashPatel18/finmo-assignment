@@ -31,6 +31,7 @@ export const Home = () => {
             justifyContent: "center",
             alignItems: "center",
             marginTop: 100,
+            height: "70vh",
           }}
         >
           <CircularProgress color="inherit" />
