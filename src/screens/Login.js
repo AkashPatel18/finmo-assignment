@@ -57,7 +57,7 @@ export const Login = () => {
               <Field
                 name="password"
                 placeHolder={"Password"}
-                type="text"
+                type="password"
                 className={"field"}
               />
               <ErrorMessage name="password">
