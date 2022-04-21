@@ -70,8 +70,11 @@ export const Login = () => {
             </Form>
           </div>
         </Formik>
-        <p>
-          New User ? <Link to={"/register"}>Register</Link>
+        <p style={{ marginTop: 15 }}>
+          New User ?{" "}
+          <Link to={"/register"} style={{ color: "blue" }}>
+            Register
+          </Link>
         </p>
       </div>
     </div>

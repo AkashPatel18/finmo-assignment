@@ -23,6 +23,18 @@ export const fetchProducts = () => async (dispatch, getState) => {
 };
 
 export const addToCart = (product) => (dispatch) => {
+  let itemsFromStorage = localStorage.getItem("items");
+  itemsFromStorage = JSON.parse(itemsFromStorage);
+  console.log(itemsFromStorage);
+  // localStorage.setItem("items", itemsFromStorage.concat(product));
+  if (itemsFromStorage == null) {
+    localStorage.setItem("items", JSON.stringify([product]));
+  } else {
+    localStorage.setItem(
+      "items",
+      JSON.stringify([...itemsFromStorage, product])
+    );
+  }
   dispatch({ type: ADD_TO_CART, payload: product });
   dispatch({ type: CALCULATE_TOTAL_PRICE, payload: product.price });
 };

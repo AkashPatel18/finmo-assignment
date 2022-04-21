@@ -104,8 +104,11 @@ export const Signup = () => {
           </div>
         </Formik>
 
-        <p>
-          Have an account ? <Link to={"/login"}>Login</Link>
+        <p style={{ marginTop: 15 }}>
+          Have an account ?{" "}
+          <Link style={{ color: "blue" }} to={"/login"}>
+            Login
+          </Link>
         </p>
       </div>
     </div>

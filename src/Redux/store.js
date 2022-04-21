@@ -12,8 +12,13 @@ const userInfoFromStorage = localStorage.getItem("user")
   ? JSON.parse(localStorage.getItem("user"))
   : null;
 
+const userItems = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+
 const initialState = {
   login: { user: userInfoFromStorage },
+  products: { cartItems: userItems },
 };
 
 const middleware = [thunk];

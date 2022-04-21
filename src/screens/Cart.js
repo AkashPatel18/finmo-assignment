@@ -77,7 +77,7 @@ export const Cart = () => {
                     />
                     {item.count}
                     <RemoveIcon
-                      onClick={() => incItem(item)}
+                      onClick={() => decItem(item)}
                       style={{ color: "white", background: "black" }}
                     />
                   </div>

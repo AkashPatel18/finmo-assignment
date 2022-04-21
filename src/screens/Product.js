@@ -75,7 +75,7 @@ export const Product = () => {
         <div className="des-product">
           <img
             src={product.image}
-            style={{ height: "200px", width: "400px" }}
+            style={{ height: "350px", width: "400px" }}
           />
         </div>
         <div className="des-product">

@@ -74,13 +74,14 @@ code {
   border: 1px solid grey;
   margin-top: 10px;
   height: 30px;
+  padding: 4px;
 }
 
 .loginContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 80vh; */
+  height: 80vh;
 }
 
 .loginForm {
@@ -169,6 +170,7 @@ td {
   margin-bottom: 30px;
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  padding: 20px 30px;
 }
 
 .signin-button {
