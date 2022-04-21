@@ -6,6 +6,8 @@ import {
   removeProduct,
   decreamentProduct,
 } from "../Redux/actions/productActions";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 export const Cart = () => {
   const { cartItems } = useSelector((state) => state.products);
@@ -47,7 +49,7 @@ export const Cart = () => {
 
   return (
     <Container fixed style={{ marginTop: 80 }}>
-      <div>
+      <div className="cartContainer">
         <table>
           <tr>
             <th>Name</th>
@@ -62,33 +64,23 @@ export const Cart = () => {
                 <td>{item.price}</td>
 
                 <td>
-                  <span
-                    onClick={() => incItem(item)}
+                  <div
                     style={{
-                      background: "#d9d9d9",
-                      borderRadius: 3,
-                      margin: 10,
-                      fontSize: 20,
-                      cursor: "pointer",
+                      display: "flex",
+                      justifyContent: "space-around",
+                      alignItems: "center",
                     }}
                   >
-                    {" "}
-                    +{""}
-                  </span>
-                  {item.count}
-                  <span
-                    onClick={() => decItem(item)}
-                    style={{
-                      background: "#d9d9d9",
-                      borderRadius: 3,
-                      margin: 10,
-                      fontSize: 20,
-                      cursor: "pointer",
-                    }}
-                  >
-                    {" "}
-                    -{" "}
-                  </span>
+                    <AddIcon
+                      onClick={() => incItem(item)}
+                      style={{ color: "white", background: "black" }}
+                    />
+                    {item.count}
+                    <RemoveIcon
+                      onClick={() => incItem(item)}
+                      style={{ color: "white", background: "black" }}
+                    />
+                  </div>
                 </td>
 
                 <td
@@ -110,7 +102,9 @@ export const Cart = () => {
           marginTop: 100,
         }}
       >
-        <p>Total Price : {totalPrice}</p>
+        <h6 style={{ fontSize: 20 }}>
+          Total Price : {parseFloat(totalPrice.toFixed(2))}
+        </h6>
       </div>
       <div
         style={{
@@ -118,9 +112,18 @@ export const Cart = () => {
           justifyContent: "flex-end",
         }}
       >
-        <Button style={{ background: "#fb641b", color: "white" }}>
-          Check out
-        </Button>
+        <button
+          // onClick={handleAddToCart}
+          style={{
+            background: "black",
+            color: "white",
+            padding: "10px 20px",
+            marginTop: 30,
+            pointer: "cursor",
+          }}
+        >
+          CHECKOUT
+        </button>
       </div>
     </Container>
   );
