@@ -10,7 +10,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Redux/actions/productActions";
 import axios from "axios";
-import { BASE_URL } from "./../Utils/api";
+import { BASE_URL } from "../Utils/api";
 import StarIcon from "@mui/icons-material/Star";
 
 export const Product = () => {

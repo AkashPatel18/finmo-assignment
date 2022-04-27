@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { NavBar } from "./Component/NavBar";
-import { Home } from "./Screens/Home";
-import { Login } from "./Screens/Login";
-import { Signup } from "./Screens/Signup";
-import { Product } from "./Screens/Product";
-import { Cart } from "./Screens/Cart";
+import { NavBar } from "./component/NavBar";
+import { Home } from "./screens/Home";
+import { Login } from "./screens/Login";
+import { Signup } from "./screens/Signup";
+import { Product } from "./screens/Product";
+import { Cart } from "./screens/Cart";
 
 function App() {
   const dispatch = useDispatch();
