@@ -64,11 +64,10 @@ export const Product = () => {
   return (
     <Container fixed>
       <div
+        className="productCont"
         style={{
           display: "flex",
-
           justifyContent: "space-around",
-
           marginTop: 70,
         }}
       >
@@ -81,6 +80,7 @@ export const Product = () => {
         <div className="des-product">
           <h6 style={{ fontSize: 20 }}>{product.title}</h6>
           <p style={{ color: "grey" }}>{product.category}</p>
+          <h5 style={{ marginTop: 10, fontSize: 17 }}>Rs {product.price}</h5>
           <Rating
             readOnly
             style={{ marginTop: 10 }}
